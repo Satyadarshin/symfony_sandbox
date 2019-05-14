@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "apache"
+		},
+		{
+			"path": "php"
+		},
+		{
+			"path": "public_html"
+		}
+	]
+}
