@@ -33,7 +33,6 @@ services:
     restart: always
     ports:
       - "3306:3306"
-
     networks:
       - backend
     environment:
@@ -42,6 +41,16 @@ services:
       MYSQL_USER: "${DB_USERNAME}"
       MYSQL_PASSWORD: "${DB_PASSWORD}"
     container_name: mariadb
+  dbadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+        - 8080:80
+    links:
+        - 'mariadb'
+    environment:
+        PMA_HOST: mariadb
+        PMA_USER: root
+        PMA_PASSWORD: rootpwd
 networks:
   frontend:
   backend:
